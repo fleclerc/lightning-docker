@@ -1,0 +1,17 @@
+version: '2'
+networks:
+    default:
+        external:
+            name: eclair_testnet
+
+services:
+   
+    eclair:
+        image: acinq/eclair
+        container_name: eclairtest
+        environment:
+            - JAVA_OPTS=-Xmx512m -Declair.printToConsole
+        
+        volumes:
+            - /mnt/big/bitcointest/eclair:/data 
+
