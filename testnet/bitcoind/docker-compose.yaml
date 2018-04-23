@@ -7,7 +7,7 @@ networks:
 services:
 
     bitcoind:
-        image: fleclerc/bitcoind 
+        image: fleclerc2/bitcoind 
         container_name: bitcoindtest
         networks:
             default:
@@ -16,7 +16,8 @@ services:
             - BTC_RUN_ARGS=-reindex
         
         volumes:
-            - /mnt/big/bitcointest:/bitcoin
+            - ../data:/bitcoin
+
         ports:
           - 8332:8332
           - 18332:18332

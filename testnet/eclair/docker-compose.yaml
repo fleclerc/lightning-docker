@@ -13,7 +13,7 @@ services:
             - JAVA_OPTS=-Xmx512m -Declair.printToConsole
         
         volumes:
-            - /mnt/big/bitcointest/eclair:/data 
+            - ../data/eclair:/data
         ports:
           - 8080:8080
           - 9735:9735
