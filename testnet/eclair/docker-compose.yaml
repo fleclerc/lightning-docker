@@ -14,4 +14,7 @@ services:
         
         volumes:
             - /mnt/big/bitcointest/eclair:/data 
+        ports:
+          - 8080:8080
+          - 9735:9735
 
