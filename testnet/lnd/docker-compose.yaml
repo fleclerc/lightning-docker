@@ -1,0 +1,32 @@
+version: '2'
+networks:
+    default:
+        external:
+            name: eclair_testnet
+
+services:
+   
+    lnd:
+#        build:
+#            context: .
+#            dockerfile: Dockerfile
+
+        image: fleclerc2/lnd
+        container_name: lndtest
+        environment:
+            - BACKEND_RPCUSER=foo
+            - BACKEND_RPCPASS=geo35TxmOwN
+            - BACKEND_RPCHOST=bitcoindtest
+            - BACKEND_ZMQPATH=tcp://bitcoindtest:29000
+            - DEBUG=debug
+            - NETWORK=testnet
+            - CHAIN=bitcoin
+            - BACKEND=bitcoind 
+
+        volumes:
+            - ../data/lnd:/data
+
+#        ports:
+#          - 8080:8080
+#          - 9735:9735
+
